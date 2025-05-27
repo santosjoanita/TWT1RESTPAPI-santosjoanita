@@ -1,30 +1,54 @@
 {
   "alunos": [
     {
-      "id": 1,
+      "id": "6821c68f4cd71f21e52268f7",
+      "nome": "Josefina",
+      "apelido": "Pintolas",
+      "curso": "Design de Produto",
+      "anoCurricular": 1,
+      "idade": 20
+    },
+    {
+      "nome": "Patty",
+      "apelido": "Linda",
+      "curso": "Turismo",
+      "anoCurricular": 2,
+      "idade": 21,
+      "id": "6821d291ca9323b0b114011e"
+    },
+    {
+      "id": "6835a8311e72a9df79f540cd",
+      "nome": "Tiago",
+      "apelido": "",
+      "curso": "ECGM",
+      "anoCurricular": 3,
+      "idade": 22
+    },
+    {
       "nome": "Joana",
       "apelido": "Silva",
       "curso": "Engenharia Informática",
-      "anoCurricular": 2
-    },
-    {
-      "id": 2,
-      "nome": "Pedro",
-      "apelido": "Ferreira",
-      "curso": "Design Multimédia",
-      "anoCurricular": 3
-    },
-    {
-      "id": 3,
-      "nome": "Carla",
-      "apelido": "Santos",
-      "curso": "Engenharia Informática",
-      "anoCurricular": 1
+      "anocurso": 2,
+      "idade": 18,
+      "id": "6835c2ac18ac9578a21d4dc2"
     }
   ],
   "cursos": [
-    { "id": 1, "nomeDoCurso": "Engenharia Informática" },
-    { "id": 2, "nomeDoCurso": "Design Multimédia" },
-    { "id": 3, "nomeDoCurso": "Gestão" }
+    {
+      "id": 1,
+      "nomeDoCurso": "Design de Produto"
+    },
+    {
+      "id": 2,
+      "nomeDoCurso": "Turismo"
+    },
+    {
+      "id": 3,
+      "nomeDoCurso": "ECGM"
+    },
+    {
+      "id": 4,
+      "nomeDoCurso": "Engenharia Informática"
+    }
   ]
 }

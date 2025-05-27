@@ -1,15 +1,21 @@
 {
-  "name": "mock-server",
+  "name": "twt1restapi",
   "version": "1.0.0",
-  "description": "API simulada com JSON-server",
+  "description": "Projeto prático TWT1RESTAPI - API simulada com JSON-Server",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch bd.json --port 3000"
+    "start:mock-server": "json-server --watch ../mock-data/bd.json --port 3000"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "json-server": "^0.17.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.15.1"
   }
 }
