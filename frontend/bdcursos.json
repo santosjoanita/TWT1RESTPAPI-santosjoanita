@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nomeDoCurso": "Design de Produto"
+  },
+  {
+    "id": 2,
+    "nomeDoCurso": "Turismo"
+  },
+  {
+    "id": 3,
+    "nomeDoCurso": "ECGM"
+  },
+  {
+    "id": 4,
+    "nomeDoCurso": "Engenharia Informática"
+  },
+  {
+    "id": 5,
+    "nomeDoCurso": "Design de Ambientes"
+  },
+  {
+    "id": 6,
+    "nomeDoCurso": "Gestão"
+  }
+]
