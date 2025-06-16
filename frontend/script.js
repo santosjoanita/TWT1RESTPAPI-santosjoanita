@@ -15,13 +15,14 @@ const submitBtn = document.getElementById('submit-btn');
 const cancelBtn = document.getElementById('cancel-edit');
 
 let editMode = false;
+let alunosCache = [];
 
 async function fetchAlunos() {
   console.log('fetchAlunos foi chamado');
   try {
     const res = await fetch(apiUrl);
     const alunos = await res.json();
-     console.log('Alunos recebidos:', alunos);  // <== aqui
+    alunosCache = alunos;
     renderAlunos(alunos);
   } catch (error) {
     alert('Erro ao buscar alunos.');
@@ -184,6 +185,11 @@ async function preencherCursos() {
     console.error('Erro ao carregar cursos:', e);
   }
 }
+
+document.getElementById('sort-az').addEventListener('click', () => {
+  const sorted = [...alunosCache].sort((a, b) => a.nome.localeCompare(b.nome, 'pt'));
+  renderAlunos(sorted);
+});
 
 fetchAlunos();
 preencherCursos();
