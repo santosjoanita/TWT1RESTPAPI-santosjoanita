@@ -166,7 +166,7 @@ async function deleteAluno(id) {
 // Preencher dropdown de cursos
 async function preencherCursos() {
   try {
-    const res = await fetch('../mock-data/bdcursos.json');
+    const res = await fetch('/mock-data/bdcursos.json');
     const cursos = await res.json();
     inputCurso.innerHTML = '<option value="">Selecione um curso</option>';
     cursos.forEach(curso => {
