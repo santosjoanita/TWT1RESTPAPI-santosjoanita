@@ -130,6 +130,11 @@ form.addEventListener('submit', async (e) => {
       });
       if (!res.ok) throw new Error('Erro ao adicionar aluno');
       form.reset();
+      // Show success message
+      const msg = document.getElementById('success-message');
+      msg.textContent = 'Aluno adicionado com sucesso';
+      msg.style.display = 'block';
+      setTimeout(() => { msg.style.display = 'none'; }, 2500);
     }
     fetchAlunos();
   } catch (error) {
@@ -158,4 +163,22 @@ async function deleteAluno(id) {
   }
 }
 
+// Preencher dropdown de cursos
+async function preencherCursos() {
+  try {
+    const res = await fetch('../mock-data/bdcursos.json');
+    const cursos = await res.json();
+    inputCurso.innerHTML = '<option value="">Selecione um curso</option>';
+    cursos.forEach(curso => {
+      const opt = document.createElement('option');
+      opt.value = curso.nomeDoCurso;
+      opt.textContent = curso.nomeDoCurso;
+      inputCurso.appendChild(opt);
+    });
+  } catch (e) {
+    console.error('Erro ao carregar cursos:', e);
+  }
+}
+
 fetchAlunos();
+preencherCursos();
