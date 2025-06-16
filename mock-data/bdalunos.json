@@ -1,0 +1,34 @@
+  [
+     {
+        "id": "6821c68f4cd71f21e52268f7",
+        "nome": "Josefina",
+        "apelido": "Pintolas",
+        "curso": "Design de Produto",
+        "anoCurricular": 1,
+        "idade": 20
+      },
+      {
+        "nome": "Patty",
+        "apelido": "Linda",
+        "curso": "Turismo",
+        "anoCurricular": 2,
+        "idade": 21,
+        "id": "6821d291ca9323b0b114011e"
+      },
+      {
+        "id": "6835a8311e72a9df79f540cd",
+        "nome": "Tiago",
+        "apelido": "",
+        "curso": "ECGM",
+        "anoCurricular": 3,
+        "idade": 22
+      },
+      {
+        "nome": "Joana",
+        "apelido": "Silva",
+        "curso": "Engenharia Informática",
+        "anocurso": 2,
+        "idade": 18,
+        "id": "6835c2ac18ac9578a21d4dc2"
+      }
+  ]

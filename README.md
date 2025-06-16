@@ -1,153 +1,143 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/VezZDIH2)
-# Trabalho Prático #1
+Trabalho Prático nº 1 — TWT1RESTAPI
+Joanita Santos
 
-## Consumo e Implementação de APIs RESTful
+📌 Tema: Consumo e Implementação de APIs RESTful
+🎯 Objetivo
+Consolidar os conhecimentos em desenvolvimento web, através da criação, consumo e implementação de APIs RESTful, usando tecnologias do ecossistema JavaScript:
 
-### Objetivo Geral
+Node.js + Express
 
-Consolidar os conhecimentos em desenvolvimento web com foco na criação, consumo e implementação de APIs RESTful utilizando tecnologias do ecossistema JavaScript:
+MongoDB / MongoDB Atlas
 
-- Node.js + Express
-- MongoDB / MongoDB Atlas
-- JSON-Server
-- Fetch API
-- Swagger (opcional)
+JSON-Server
+
+Fetch API
+
+Swagger (opcional)
 
 O projeto simula o ciclo completo de desenvolvimento de uma aplicação web com front-end e back-end separados, incluindo testes e deploy.
 
----
+🔗 Links do Projeto
+🌐 Front-end (Vercel): https://twt-1-restpapi-santosjoanita.vercel.app
 
-## Partes do Trabalho
+🔧 API (Render): [A ser adicionado em breve]
 
-### Parte 1: Estruturação da Base de Dados (JSON)
-
-- Criar um ficheiro `bd.json` com:
-
-  - Lista de alunos: `nome`, `apelido`, `curso`, `anoCurricular`
-  - Lista de cursos: `nomeDoCurso`
-
-- 📁 Diretório sugerido: `/mock-data/`
-- 📄 Entregável: `bd.json`
-
----
-
-### Parte 2: API Simulada com JSON-Server + Testes
-
-- Configurar e iniciar `json-server` com `bd.json`
-- Testar os endpoints com Postman (CRUD de alunos, leitura de cursos)
-- Exportar a coleção de testes
-
-- 📁 Diretório sugerido: `/mock-server/`
-- 📄 Entregáveis:
-  - Código de configuração (`package.json`, script json-server)
-  - Coleção `.json` do Postman em `/tests/`
-
----
-
-### Parte 3: Interface Web (CRUD de Alunos)
-
-- Desenvolver uma página web funcional para gerir alunos:
-  - Ver alunos
-  - Adicionar aluno
-  - Editar aluno
-  - Apagar aluno
-- Utilizar `Fetch API` e programação assíncrona
-
-- 📁 Diretório sugerido: `/frontend/`
-- 📄 Entregável: Página funcional conectada à API simulada
-
----
-
-### Parte 4: API RESTful real (Node.js + Express + MongoDB Atlas)
-
-- Migrar os dados para o MongoDB Atlas
-- Implementar a API Express com endpoints equivalentes ao JSON-server
-- Manter a estrutura RESTful
-- Sugestão : usar mongoose a abordagem MVC (bónus 5%)
-
-- 📁 Diretório sugerido: `/backend/`
-- 📄 Entregável: Código funcional da API com instruções
-
----
-
-### Parte 5: Deploy da Aplicação
-
-- Fazer deploy do front-end no [Vercel](https://vercel.com)
-- (Opcional) Fazer deploy da API no [Render](https://render.com)
-- Adaptar o front-end para consumir a nova API
-
-📄 Incluir no `README.md`:
-
-- URL pública do front-end
-- URL da API real
-- 📄 Entregável: Links funcionais no repositório
-
----
-
-### Parte 6 (Bonificação): Documentação da API
-
-- Utilizar Swagger para documentar os endpoints da API
-- Incluir rota `/api-docs` na aplicação
-
-- 📁 Diretório sugerido: `/backend/docs/`
-- 📄 Entregável: Swagger funcional e acessível
-
----
-
-## Organização do Projeto
-
-```text
+🗂 Estrutura do Projeto
+plaintext
+Copy
+Edit
 projeto-raiz/
 │
-├── /frontend/ ← Interface web (HTML/CSS/JS)
-├── /backend/ ← API RESTful com Node.js + MongoDB
-├── /mock-server/ ← JSON-server configurado
-├── /mock-data/ ← Base de dados JSON original
-├── /tests/ ← Coleção de testes Postman
-├── README.md ← Instruções, links e notas
+├── /frontend/        ← Interface web (HTML/CSS/JS)
+├── /backend/         ← API real com Node.js + MongoDB
+├── /mock-server/     ← API simulada com JSON-Server
+├── /mock-data/       ← Ficheiro bd.json com os dados
+├── /tests/           ← Coleção de testes Postman
+├── README.md         ← Instruções e links
 └── .gitignore, etc.
-```
 
----
 
-## Sugestão de Branches
 
-| Branch     | Descrição                        |
-| ---------- | -------------------------------- |
-| `main`     | Versão estável e final           |
-| `dev`      | Desenvolvimento geral            |
-| `frontend` | Interface e interação do usuário |
-| `api`      | API real (Node + MongoDB)        |
-| `deploy`   | Adaptações para Vercel/Render    |
+🧩 Etapas do Trabalho
+✅ Parte 1: Base de Dados em JSON
+Criação do ficheiro bd.json com:
 
----
+Lista de alunos: nome, apelido, curso, anoCurricular
 
-## Critérios de Avaliação
+Lista de cursos: nomeDoCurso
 
-| Critério                         | Peso |
-| -------------------------------- | ---- |
-| Base de dados JSON correta       | 10%  |
-| API simulada e testada (Postman) | 10%  |
-| Funcionalidade do front-end      | 30%  |
-| Qualidade da API real (Node.js)  | 30%  |
-| Integração front-end/backend     | 10%  |
-| Deploy funcional                 | 10%  |
-| Bonificação (MVC)                | +5%  |
-| Bonificação (Swagger)            | +5%  |
+📁 Diretório: /mock-data/
+📄 Entregável: bd.json
 
----
+✅ Parte 2: API Simulada com JSON-Server + Testes
+Configuração do json-server com o bd.json
 
-## Entrega
+Testes de endpoints no Postman
 
-- Entrega via **GitHub Classroom**.
-- O repositório deve conter:
-  - Código funcional
-  - README.md com instruções claras
-  - Links de deploy (front e opcionalmente back)
+Exportação da coleção de testes
 
----
+📁 Diretório: /mock-server/
+📄 Entregáveis:
 
-### Repositório Base
+Scripts de configuração (ex: package.json)
 
-Usa o repositório template inicial fornecido no GitHub Classroom.
-# TWT1RESTAPI
+Coleção .json dos testes no /tests/
+
+✅ Parte 3: Interface Web (CRUD de Alunos)
+Página web funcional onde é possível:
+
+Visualizar alunos
+
+Adicionar aluno
+
+Editar aluno
+
+Apagar aluno
+
+Utilização da Fetch API com async/await
+
+📁 Diretório: /frontend/
+📄 Entregável: Página ligada à API (simulada ou real)
+
+✅ Parte 4: API RESTful Real (Node.js + MongoDB)
+Migração dos dados para o MongoDB Atlas
+
+Implementação da API real com Express e mongoose
+
+Estrutura RESTful com organização MVC (bónus)
+
+📁 Diretório: /backend/
+📄 Entregável: Código funcional da API com instruções
+
+✅ Parte 5: Deploy
+Front-end feito na plataforma Vercel
+
+Back-end (API real) será feito na plataforma Render
+
+A interface foi ajustada para consumir a nova API (quando estiver ativa)
+
+Render: https://twt1restapi-santosjoanita.onrender.com/
+Vercel: https://twt-1-restpapi-santosjoanita.vercel.app/
+📄 Entregável:
+
+Links públicos no README.md
+
+Código ajustado com URL correta da API
+
+🟡 Parte 6 (Bónus): Documentação com Swagger
+Documentação dos endpoints da API com Swagger
+
+Rota /api-docs incluída
+
+📁 Diretório: /backend/docs/
+📄 Entregável: Interface Swagger acessível e funcional
+
+🌿 Sugestão de Branches (Git)
+Branch	Descrição
+main	Versão estável e final do projeto
+dev	Desenvolvimento geral
+frontend	Interface do utilizador (HTML/JS)
+api	API real com Node e MongoDB
+deploy	Versão adaptada para Vercel/Render
+
+📝 Critérios de Avaliação
+Critério	Peso
+Base de dados JSON	10%
+API simulada e testada (Postman)	10%
+Interface web funcional	30%
+Qualidade da API real (Node.js)	30%
+Integração entre front e back-end	10%
+Deploy funcional	10%
+Bónus (MVC)	+5%
+Bónus (Swagger)	+5%
+
+📌 Entrega
+A entrega é feita via GitHub Classroom
+
+O repositório deve conter:
+
+Código completo e funcional
+
+Ficheiro README.md com todas as instruções
+
+Links para o front-end (Vercel) e API (Render)

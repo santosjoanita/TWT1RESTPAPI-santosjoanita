@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:3000/alunos';
+// script.js
+const apiUrl = 'https://twt1restapi-santosjoanita.onrender.com/alunos';
 
 const form = document.getElementById('aluno-form');
 const alunosList = document.getElementById('alunos-list');
@@ -16,9 +17,11 @@ const cancelBtn = document.getElementById('cancel-edit');
 let editMode = false;
 
 async function fetchAlunos() {
+  console.log('fetchAlunos foi chamado');
   try {
     const res = await fetch(apiUrl);
     const alunos = await res.json();
+     console.log('Alunos recebidos:', alunos);  // <== aqui
     renderAlunos(alunos);
   } catch (error) {
     alert('Erro ao buscar alunos.');
@@ -31,7 +34,7 @@ function renderAlunos(alunos) {
 
   alunos.forEach(aluno => {
     const li = document.createElement('li');
-    li.textContent = `${aluno.nome} ${aluno.apelido} — ${aluno.curso} (Ano: ${aluno.anocurso}) - Idade: ${aluno.idade}`;
+    li.textContent = `${aluno.nome} ${aluno.apelido} — ${aluno.curso} (Ano: ${aluno.anoCurso || aluno.anocurso}) - Idade: ${aluno.idade} `;
 
     // Botão Editar
     const btnEdit = document.createElement('button');
@@ -43,8 +46,14 @@ function renderAlunos(alunos) {
     // Botão Apagar
     const btnDelete = document.createElement('button');
     btnDelete.textContent = 'Apagar';
+    // Use aluno._id or aluno.id, whichever exists
+    const alunoId = aluno._id || aluno.id;
     btnDelete.addEventListener('click', () => {
-      deleteAluno(aluno.id);
+      if (alunoId) {
+        deleteAluno(alunoId.toString());
+      } else {
+        alert('ID do aluno não encontrado!');
+      }
     });
 
     li.appendChild(btnEdit);
@@ -56,11 +65,13 @@ function renderAlunos(alunos) {
 
 function startEditAluno(aluno) {
   editMode = true;
-  inputId.value = aluno.id;
+  // Use aluno._id or aluno.id, whichever exists
+  const alunoId = aluno._id || aluno.id;
+  inputId.value = alunoId ? alunoId.toString() : '';
   inputNome.value = aluno.nome;
   inputApelido.value = aluno.apelido;
   inputCurso.value = aluno.curso;
-  inputAnoCurso.value = aluno.anocurso;
+  inputAnoCurso.value = aluno.anoCurso || aluno.anocurso;
   inputIdade.value = aluno.idade;
 
   submitBtn.textContent = 'Guardar';
@@ -78,7 +89,6 @@ function cancelEdit() {
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  // Validação idade mínima
   if (parseInt(inputIdade.value) < 18) {
     alert('A idade mínima é 18 anos.');
     return;
@@ -94,7 +104,6 @@ form.addEventListener('submit', async (e) => {
 
   try {
     if (editMode) {
-      // Editar aluno
       const id = inputId.value;
       const res = await fetch(`${apiUrl}/${id}`, {
         method: 'PUT',
@@ -104,7 +113,6 @@ form.addEventListener('submit', async (e) => {
       if (!res.ok) throw new Error('Erro ao atualizar aluno');
       cancelEdit();
     } else {
-      // Adicionar novo aluno
       const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -140,5 +148,4 @@ async function deleteAluno(id) {
   }
 }
 
-// Carregar alunos quando a página abrir
 fetchAlunos();

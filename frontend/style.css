@@ -1,84 +1,128 @@
 body {
-  font-family: Arial, sans-serif;
-  max-width: 700px;
-  margin: 30px auto;
-  padding: 0 15px;
-  background: #f9f9f9;
-  color: #333;
-}
-
-h1, h2 {
-  text-align: center;
-  color: #4b4b4b;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  background: #fff;
-  margin: 8px 0;
-  padding: 12px 15px;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0055ff;
+  margin: 0;
+  padding: 40px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 }
 
-button {
-  margin-left: 8px;
-  padding: 5px 10px;
+h1, h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #444;
+}
+
+input {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  border-color: #7b61ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(123, 97, 255, 0.2);
+}
+
+#submit-btn,
+#cancel-edit {
+  padding: 12px;
+  font-size: 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9em;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #ddd;
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-button:nth-child(1) {
-  background-color: #4CAF50;
+#submit-btn {
+  background-color: #7b61ff;
   color: white;
 }
 
-button:nth-child(2) {
+#submit-btn:hover {
+  background-color: #5e48d3;
+}
+
+#cancel-edit {
   background-color: #f44336;
   color: white;
 }
 
-form {
-  background: #fff;
-  padding: 15px;
-  border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+#cancel-edit:hover {
+  background-color: #d32f2f;
 }
 
-label {
-  display: block;
-  margin: 10px 0 5px;
+/* TABELA DE ALUNOS */
+table#alunos-table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table#alunos-table th,
+table#alunos-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table#alunos-table th {
+  background-color: #7b61ff;
+  color: white;
   font-weight: bold;
 }
 
-input[type="text"], input[type="number"] {
-  width: 100%;
-  padding: 6px 8px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+table#alunos-table td button {
+  padding: 6px 10px;
+  font-size: 14px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-#cancel-edit {
-  background-color: #999;
+table#alunos-table td button.edit-btn {
+  background-color: #2196f3;
   color: white;
-  margin-left: 10px;
+}
+
+table#alunos-table td button.edit-btn:hover {
+  background-color: #0b7dda;
+}
+
+table#alunos-table td button.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+table#alunos-table td button.delete-btn:hover {
+  background-color: #d32f2f;
 }
