@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const { MongoClient, ObjectId } = require('mongodb');
+const mongoose = require('mongoose');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
 
 const app = express();
 app.use(cors());
@@ -12,27 +14,52 @@ const DB_NAME = 'Academicos';
 
 let db, alunosCollection, cursosCollection;
 
-MongoClient.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(client => {
-    db = client.db(DB_NAME);
-    alunosCollection = db.collection('Alunos');
-    cursosCollection = db.collection('Cursos');
-    app.listen(port, () => {
-      console.log(`Server is running on http://localhost:${port}`);
-    });
-  })
-  .catch(err => {
-    console.error('Failed to connect to MongoDB', err);
-  });
+mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Conectado ao MongoDB com Mongoose'))
+  .catch(err => console.error('Erro ao conectar com Mongoose', err));
 
-function isValidObjectId(id) {
-  return /^[a-fA-F0-9]{24}$/.test(id);
-}
+// Controllers
+const alunoController = require('./controllers/alunoController');
+const cursoController = require('./controllers/cursoController');
 
-app.get("/", (req, res) => {
-  res.send('<h1>Olá TW ECGM</h1>');
-});
+// Rotas Alunos
+app.get('/alunos', alunoController.getAlunos);
+app.get('/alunos/:id', alunoController.getAlunoById);
+app.post('/alunos', alunoController.createAluno);
+app.put('/alunos/:id', alunoController.updateAluno);
+app.delete('/alunos/:id', alunoController.deleteAluno);
 
+// Rotas Cursos
+app.get('/cursos', cursoController.getCursos);
+
+/**
+ * @swagger
+ * /alunos:
+ *   get:
+ *     summary: Lista todos os alunos
+ *     responses:
+ *       200:
+ *         description: Lista de alunos
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                   nome:
+ *                     type: string
+ *                   apelido:
+ *                     type: string
+ *                   curso:
+ *                     type: string
+ *                   anoCurricular:
+ *                     type: integer
+ *                   idade:
+ *                     type: integer
+ */
 // Listar todos os alunos
 app.get("/alunos", async (req, res) => {
   try {
@@ -127,4 +154,15 @@ app.delete("/alunos/:id", async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: "Erro ao apagar aluno" });
   }
+});
+
+// Swagger (docs/swagger.js)
+require('./docs/swagger')(app);
+
+app.get("/", (req, res) => {
+  res.send('<h1>Olá TW ECGM</h1>');
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
