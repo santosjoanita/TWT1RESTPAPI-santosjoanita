@@ -111,7 +111,7 @@ form.addEventListener('submit', async (e) => {
         body: JSON.stringify(alunoData)
       });
       if (!res.ok) throw new Error('Erro ao atualizar aluno');
-      cancelEdit();
+      // Do not call cancelEdit() here, so the form keeps the data
     } else {
       const res = await fetch(apiUrl, {
         method: 'POST',
