@@ -23,5 +23,4 @@ Este diretório contém a coleção de testes Postman utilizada para validar os 
 
 ---
 
-> Para mais detalhes sobre os endpoints, consulte a documentação Swagger em `/api-docs` ou o README principal do projeto.
 

@@ -16,7 +16,7 @@ Este é um projeto de API RESTful para gerenciar alunos e cursos. A API permite 
 
 ### Configuração
 
-1. Adicione a variável `MONGO_URI` com a URL de conexão do MongoDB Atlas, ou edite diretamente a constante no `server.js`.
+1. Adicione a variável `MONGO_URL` com a URL de conexão do MongoDB Atlas, ou edite diretamente a constante no `server.js`.
 
 ### Execução
 
