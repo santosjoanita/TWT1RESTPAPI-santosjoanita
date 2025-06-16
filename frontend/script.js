@@ -34,7 +34,15 @@ function renderAlunos(alunos) {
 
   alunos.forEach(aluno => {
     const li = document.createElement('li');
-    li.textContent = `${aluno.nome} ${aluno.apelido} — ${aluno.curso} (Ano: ${aluno.anoCurso || aluno.anocurso}) - Idade: ${aluno.idade} `;
+
+    // Info div
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'aluno-info';
+    infoDiv.textContent = `${aluno.nome} ${aluno.apelido} — ${aluno.curso} (Ano: ${aluno.anoCurso || aluno.anocurso}) - Idade: ${aluno.idade} `;
+
+    // Actions div
+    const actionsDiv = document.createElement('div');
+    actionsDiv.className = 'aluno-actions';
 
     // Botão Editar
     const btnEdit = document.createElement('button');
@@ -56,9 +64,11 @@ function renderAlunos(alunos) {
       }
     });
 
-    li.appendChild(btnEdit);
-    li.appendChild(btnDelete);
+    actionsDiv.appendChild(btnEdit);
+    actionsDiv.appendChild(btnDelete);
 
+    li.appendChild(infoDiv);
+    li.appendChild(actionsDiv);
     alunosList.appendChild(li);
   });
 }
