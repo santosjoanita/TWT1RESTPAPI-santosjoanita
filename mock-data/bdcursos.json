@@ -14,5 +14,13 @@
   {
     "id": 4,
     "nomeDoCurso": "Engenharia Informática"
+  },
+  {
+    "id": 5,
+    "nomeDoCurso": "Design de Ambientes"
+  },
+  {
+    "id": 6,
+    "nomeDoCurso": "Gestão"
   }
 ]
