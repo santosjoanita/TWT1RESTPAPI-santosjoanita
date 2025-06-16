@@ -74,55 +74,56 @@ input:focus {
   background-color: #d32f2f;
 }
 
-/* TABELA DE ALUNOS */
-table#alunos-table {
+/* LISTA DE ALUNOS (ul/li) */
+#alunos-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto 0 auto;
+  max-width: 700px;
   width: 100%;
-  max-width: 900px;
-  border-collapse: collapse;
-  margin-top: 30px;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
-  overflow: hidden;
 }
 
-table#alunos-table th,
-table#alunos-table td {
-  padding: 12px 16px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+#alunos-list li {
+  background: #fff;
+  margin-bottom: 18px;
+  padding: 18px 22px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(123, 97, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 17px;
+  transition: box-shadow 0.2s;
 }
 
-table#alunos-table th {
-  background-color: #7b61ff;
-  color: white;
-  font-weight: bold;
+#alunos-list li:hover {
+  box-shadow: 0 4px 16px rgba(123, 97, 255, 0.18);
 }
 
-table#alunos-table td button {
-  padding: 6px 10px;
-  font-size: 14px;
-  margin-right: 6px;
+#alunos-list button {
+  padding: 8px 14px;
+  font-size: 15px;
+  margin-left: 8px;
   border: none;
-  border-radius: 6px;
+  border-radius: 7px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s;
 }
 
-table#alunos-table td button.edit-btn {
+#alunos-list button:first-of-type {
   background-color: #2196f3;
-  color: white;
+  color: #fff;
 }
 
-table#alunos-table td button.edit-btn:hover {
+#alunos-list button:first-of-type:hover {
   background-color: #0b7dda;
 }
 
-table#alunos-table td button.delete-btn {
+#alunos-list button:last-of-type {
   background-color: #f44336;
-  color: white;
+  color: #fff;
 }
 
-table#alunos-table td button.delete-btn:hover {
+#alunos-list button:last-of-type:hover {
   background-color: #d32f2f;
 }
