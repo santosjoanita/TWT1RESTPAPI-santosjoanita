@@ -154,3 +154,22 @@ select:focus {
 #alunos-list button:last-of-type:hover {
   background-color: #d32f2f;
 }
+
+#sort-az {
+  background-color: #b39ddb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(123, 97, 255, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+#sort-az:hover {
+  background-color: #9575cd;
+  box-shadow: 0 4px 16px rgba(123, 97, 255, 0.18);
+}
